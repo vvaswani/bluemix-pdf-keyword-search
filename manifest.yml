@@ -1,0 +1,8 @@
+---
+applications:
+- name: pdf-keyword-search-[initials]
+memory: 256M
+instances: 1
+host: pdf-keyword-search-[initials]
+buildpack: https://github.com/cloudfoundry/php-buildpack.git
+stack: cflinuxfs2

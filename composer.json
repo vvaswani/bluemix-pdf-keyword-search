@@ -1,0 +1,10 @@
+{
+    "require": {
+        "php-opencloud/openstack": "*",
+        "slim/slim": "*",
+        "slim/php-view": "*",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

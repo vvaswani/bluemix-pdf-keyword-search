@@ -1,0 +1,15 @@
+<?php
+
+$config['settings']['displayErrorDetails'] = true;
+
+$config['settings']['db']['uri'] = "mongodb://USERNAME:PASSWORD@HOST:PORT/DATABASE";
+
+$config['settings']['document-conversion']['user'] = "USERNAME";
+$config['settings']['document-conversion']['pass'] = "PASSWORD";
+
+$config['settings']['alchemy']['apikey'] = "APIKEY";
+
+$config['settings']['object-storage']['url'] = "URL";
+$config['settings']['object-storage']['region'] = "REGION";
+$config['settings']['object-storage']['user'] = "USERNAME";
+$config['settings']['object-storage']['pass'] = "PASSWORD";
