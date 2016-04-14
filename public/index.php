@@ -12,6 +12,20 @@ set_time_limit(6000);
 require '../vendor/autoload.php';
 require '../config.php';
 
+// if BlueMix VCAP_SERVICES environment available
+// overwrite with credentials from BlueMix
+if ($services = getenv("VCAP_SERVICES")) {
+  $services_json = json_decode($services, true);
+  
+  $config['settings']['document-conversion']['user'] = $services_json["document_conversion"][0]["credentials"]["username"];
+  $config['settings']['document-conversion']['pass'] = $services_json["document_conversion"][0]["credentials"]["password"];
+
+  $config['settings']['object-storage']['url'] = $services_json["Object-Storage"][0]["credentials"]["auth_url"] . '/v3';
+  $config['settings']['object-storage']['region'] = $services_json["Object-Storage"][0]["credentials"]["region"];;
+  $config['settings']['object-storage']['user'] = $services_json["Object-Storage"][0]["credentials"]["userId"];;
+  $config['settings']['object-storage']['pass'] = $services_json["Object-Storage"][0]["credentials"]["password"];;
+} 
+
 // initialize application
 $app = new \Slim\App($config);
 

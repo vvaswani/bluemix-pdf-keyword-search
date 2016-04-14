@@ -9,6 +9,7 @@ To deploy this application to your local development environment:
  * Clone the repository to your local system.
  * Run `composer update` to install all dependencies.
  * Create `config.php` with credentials for your MongoDB database, Bluemix Object Storage service, Watson Document Conversion service and AlchemyAPI authentication token. Use `config.php.sample` as an example.
+ * Create a `docs` collection in your MongoDB database and add a `text` index on the `keywords` field.
  * Define a virtual host pointing to the `public` directory, as described in the article.
  
 To deploy this application to your Bluemix space:
@@ -16,7 +17,8 @@ To deploy this application to your Bluemix space:
  * Clone the repository to your local system.
  * Run `composer update` to install all dependencies.
  * Create `config.php` with credentials for your MongoDB database and AlchemyAPI authentication token. Use `config.php.sample` as an example.
- * Update `manifest.yml` with your custom hostname.
+  * Create a `docs` collection in your MongoDB database and add a `text` index on the `keywords` field.
+  * Update `manifest.yml` with your custom hostname.
  * Push the application to Bluemix and bind Object Storage and Document Conversion services to it, as described in the article.
  
 A demo instance is available on Bluemix at [http://pdf-keyword-search.mybluemix.net](http://pdf-keyword-search.mybluemix.net).
