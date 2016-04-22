@@ -28,6 +28,9 @@
       
       <?php if (!isset($_POST['submit'])): ?>
       <div>
+        <div class="alert alert-danger">
+          This is a public demo application. Documents uploaded are publicly accessible and searchable. Avoid uploading confidential or sensitive information, and use the <a href="<?php echo $data['router']->pathFor('legal'); ?>">Reset System</a> option to delete all data from the application.
+        </div>
         <form method="post" enctype="multipart/form-data" action="<?php echo $data['router']->pathFor('add'); ?>">
           <input type="hidden" name="MAX_FILE_SIZE" value="300000000" />
           <div class="form-group">
