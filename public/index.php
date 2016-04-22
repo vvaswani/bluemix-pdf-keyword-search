@@ -201,9 +201,9 @@ $app->get('/search', function (Request $request, Response $response) {
       $where = array(
         '$text' => array('$search' => $q) 
       );  
+      $collection = $this->db->docs;
+      $results = $collection->find($where)->sort(array('updated' => -1));    
     }
-    $collection = $this->db->docs;
-    $results = $collection->find($where)->sort(array('updated' => -1));    
   }
   $response = $this->view->render($response, 'search.phtml', array('router' => $this->router, 'results' => $results));
   return $response;
